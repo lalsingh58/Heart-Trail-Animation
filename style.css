@@ -1,17 +1,31 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-span{
-    background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-1024.png");
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    background-size:cover ;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+body {
+  background-color: black;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.heart {
+  position: absolute;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-1024.png");
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -500px);
+    opacity: 0;
+  }
 }
